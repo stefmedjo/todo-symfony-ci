@@ -28,8 +28,7 @@ jobs:
     - name: php-cs-fixer default
       uses: zalexki/php-cs-fixer-action@master
       with:
-          other-cmds: '--dry-run --diff --config=/another/config/file'
-      
+          other-cmds: '--dry-run --diff
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
