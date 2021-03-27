@@ -25,10 +25,13 @@ jobs:
       id: security-check
     - name: Display the vulnerabilities as JSON
       run: echo ${{ steps.security-check.outputs.vulns }}
-    - name: php-cs-fixer default
-      uses: zalexki/php-cs-fixer-action@master
+
+    - name: Run php-cs-fixer
+      run: ./vendor/bin/php-cs-fixer fix
+
+    - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-          other-cmds: 'fix'
+          commit_message: Apply php-cs-fixer changes
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
