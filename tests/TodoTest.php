@@ -10,7 +10,7 @@ class TodoTest extends TestCase
     public function testTodoCreate(): void
     {
         $todo = new Todo();
-        $todo->setContent("Sleep");
-        $this->assertTrue($todo->getContent() === "Sleep");
+        $todo->setContent('Sleep');
+        $this->assertTrue('Sleep' === $todo->getContent());
     }
 }
